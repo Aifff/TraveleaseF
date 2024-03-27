@@ -1,38 +1,523 @@
-.App {
+body{
+ /* font-family: "Playfair Display SC", "serif" !important;  */
+}
+
+
+
+:root {
+  --primary-color: #25717d; /* Blue */
+  --secondary-color: #95246d; /* Gray */
+}
+
+
+.logo{
+  font-family: "Grenze Gotisch", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  /* font-size: 3.5vw; */
+  font-size: calc(1.375rem + 1.5vw);
+  font-style: normal;
+  color: var(--secondary-color);
+
+  display: flex;
+  justify-content: center;
+}
+
+.App{
+  /* background-image: linear-gradient(to bottom, #186b76, #608c9e, #9bafc1); */
+  background-color: var(--primary-color);
+}
+
+
+.phoneCity{
+  display: none;
+}
+
+.totalNavbar{
+  display: flex;
+  flex-direction: row;
+}
+
+.subNav{
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  padding: 20px 0px;
+
+  display: flex;
+  flex-direction: row;
+  
+  position: fixed;
+  z-index: 2;
+
+  backdrop-filter: blur(5px);
+}
+
+.css-42b2qy{
+  width: 41% !important;
+}
+
+
+.navAdd{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.navButtons{
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.hero{
+  /* height: 450px; */
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-bottom: 50px;
+}
+
+.subhero{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.subhero button{
+  color:var(--secondary-color);
+  font-size: 1.5vw;
+
+  border-radius: 40px;
+  width: 175px;
+  padding:10px;
+
+  /* display: inline-block; */
+  text-decoration: none;
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(3px);
+  /* color: rgba(255,255,255,0.8); */
+}
+
+.subhero p{
+  color:var(--secondary-color);
+  font-size: 1.5vw;
+
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero2{
+  background-image: url('./assets/clouds.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 25px;
+  height:calc(100vh - 20px);
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.hero2p{
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 2vw;
+  font-weight: 300;
+
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.hero2p span{
+
+}
+
+.hero2list{
+
+  /* margin-top: 30px; */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hero2list ul li{
+  text-align: left;
+  font-weight: 350;
+  font-size: 1.5vw;
+}
+
+.hero2list ul li span{
+  color:#9c5885;
+}
+
+
+nav{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed !important;
+
+  justify-content: space-between !important;
+}
+
+@media (min-width:1200px) {
+  
+.navbar-collapse{
+  
+  padding-left: 30px;
+}
+}
+.navbarHeader{
+  display: none;
+}
+
+nav ul{
+
+  list-style: none;
+
+  font-size: large;
+  height: 100%;
+
+  /* padding:0px 32px; */
+  padding: 0px;
+  margin:0px;
+
+  background-color:#fff;
+  border-radius: 50px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav ul li a{
+  color:#000;
+  font-size: 1.4vw;
+  padding:0px 20px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.navbar-expand-lg .navbar-collapse{
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.blank{
+  height: 100px;
+}
+
+h1{
+  font-family: "Playfair Display SC", serif;
+  font-weight: 600;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+
+  background: linear-gradient(180deg, rgba(37,113,125,1) 0%, rgba(255,0,0,0) 100%);
+  color:var(--secondary-color) !important;
+
+  margin-bottom: 0px;
+}
+
+@media (min-width:1200px) {
+  h1{
+  font-size: 3.5vw !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+/* chat */
+.chat-app{
+  padding: 25px;
+
+  height: 100%;
+}
+
+.header{
+  width: 100%;
+}
+
+.header h1{
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.messageBox{
+  padding-top:10px ;
+  padding-right: 2px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+
+  height: 380px;
+
+  color: #fff;
+
+  border-radius: 40px 0px 40px 0px;
+  border: 2px var(--secondary-color) solid;
+}
+
+
+.messages{
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+
+  overflow: auto;
+  height: calc(100% - 55px) ;
+}
+
+.user{
+  color:#000;
+}
+
+.message span{
+  /* for messge from users */
+
+}
+
+/* scrollbar */
+
+.messages::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+.messages::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+/* Handle */
+.messages::-webkit-scrollbar-thumb {
+  background: #804f6f; 
+  border-radius: 10px;
+}
+/* Handle on hover */
+.messages::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color); 
+}
+/* scrollbar */
+
+.new-message-form{
+  width: 100%;
+}
+
+.new-message-input{
+  width: 85%;
+}
+
+.send-button{
+  border: 1px var(--secondary-color) solid;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 3px;
+  color: #000;
+
+  height: 30px;
+  width: 60px;
+
+  top:-15px;
+  position: relative;
+}
+
+
+
+/* no cards displayed on home page */
+.homeCard{
+  height: fit-content;
+}
+
+.noCard{
+  background-image: url('./assets/clouds2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  text-align: center;
+
+  height: 300px;
+  padding: 20px 0px;
+
+  justify-content: space-evenly;
+
+  color: var(--secondary-color);
 }
 
-.App-link {
-  color: #61dafb;
+.noCardHeading{
+  font-weight: 600 !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.noCardLink{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 1.5vw;
+  font-weight: 550;
+}
+
+/* cards on home page */
+.main{
+  padding: 30px;
+}
+
+.main{
+  /* background-color: #2F3C7E; */
+  background: linear-gradient(270deg, rgba(55,131,142,1) 0%, rgba(93,149,148,1) 50%, rgba(154,181,156,1) 100%);
+  color: var(--secondary-color);
+}
+
+
+h2{
+  color: var(--secondary-color) !important;
+  text-align: center;
+}
+
+.cardHeading{
+  font-size: 2.5vw;
+  margin-bottom: 0px !important;
+}
+
+.cardDescription{
+  font-size: 1.5vw;
+}
+
+.cardError{
+  font-size: 1.4vw;
+  color:#000;
+}
+
+.loadmore, .loadall{
+  float: right;
+  position: relative;
+  top: -15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* for mobile screens */
+@media (max-width:576px) {
+  nav{
+    /* display: none; */
+    width: 100%;
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
+
+  .phoneCity{
+    display: flex;
+    position: fixed;
+    width: 100px;
+    top:100px;
+    left: 365px;
   }
+
+  .css-42b2qy{
+    width: 100% !important;
+  }
+
+  .nav ul li a{
+    font-size: 1000px;
+  }
+
+  .new-message-input{
+    width: 80%;
+  }
+
+  .hero{
+    background-color: transparent;
+  }
+
+  .heroHeader{
+    background-color: transparent;
+    padding-top: 25px;
+  }
+
+  .hero2list ul li{
+    font-size: 2.5vw;
+  }
+
+  .subNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 0px !important;
+  }
+
+  .navbar-expand-lg .navbar-collapse{
+    justify-content: center;
+  }
+
+  .navbar-expand-lg .navbar-collapse{
+    flex-direction: row;
+  }
+
+  .subNav > *{
+    padding: 20px !important;
+  }
+
+  .navbar{
+    justify-content: flex-end;
+  }
+
+  .subhero p, .subhero button{
+    font-size: 2.5vw;
+  }
+
+  .show{
+    backdrop-filter: blur(5px);
+    background-color: #aca6a6;
+    border-radius: 50px;
+  }
+
+  .cardHeading{
+    font-size: 4vw;
+  }
+  .cardDescription{
+    font-size: 3vw;
+  }
+
+  
 }
