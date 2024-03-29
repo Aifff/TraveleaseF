@@ -14,7 +14,7 @@ const Accomodation = ({selectedCity}) => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://travelease-b.vercel.app//${selectedCity}/hotel`)
+      .get(`https://travelease-b.vercel.app/${selectedCity}/hotel`)
       // .get(`http://localhost:4000/${selectedCity}/hotel`)
       .then((response) => {
         setBook(response.data.data);        //data is received and stored in 'book' state variable

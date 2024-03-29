@@ -52,7 +52,7 @@ const Home = ({City, setSelectedCity, selectedCity}) => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://travelease-b.vercel.app//${City}`)
+      .get(`https://travelease-b.vercel.app/${City}`)
       // .get(`http://localhost:4000/${City}`)
       .then((response) => {
         setBooks(response.data.data);

@@ -51,7 +51,7 @@ const CreateCard = ({ onClose, user }) => {
     setLoading(true);
 
     axios
-      .post(`https://travelease-b.vercel.app//addNewCard`, data)
+      .post(`https://travelease-b.vercel.app/addNewCard`, data)
       // .post(`http://localhost:4000/addNewCard`, data)
       .then(() => {
         setLoading(false);
