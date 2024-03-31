@@ -16,6 +16,7 @@ import CardPage from './homeCardpage'
 
 
 import { ReactComponent as ChatSVG } from '../../assets/ChatSVG.svg';
+import { ReactComponent as AdvantureMapSVG } from '../../assets/AdventureMap.svg';
 
 import {
   Container,
@@ -81,10 +82,14 @@ const Home = ({City, setSelectedCity, selectedCity}) => {
       touchControls: true,
       gyroControls: false,
       minHeight: 200.00,
-      // height:550,
+      height:550,
       minWidth: 200.00,
       cloudColor: 0x95b4d2,
-      skyColor: 0x25717d
+      skyColor: 0x25717d,
+      // height: 100.00,
+      // aspectRatio:300/500,
+      scale:10,
+
     })
 
     return () => {
@@ -99,15 +104,22 @@ const Home = ({City, setSelectedCity, selectedCity}) => {
     <div className="home w-100">
       
       <Box>
+
         <div ref={vantaRef} className="hero">
 
-        <h1 className="w-100 heroHeader">Travelease</h1>
-          
-          <div className="subhero">
-            <p>A virtual travel guide for all your trips.<br /><span>Meticulously curated by the city's locals</span></p>
-
-            <button href='#start'>Explore a city</button>
+          <div className="w-100">
+            <h1 className="w-100 heroHeader">Travelease</h1>
           </div>
+
+          <div className="AdventureMapSVG">
+            <AdvantureMapSVG />
+          </div>
+
+          <div className="subhero">
+            <p>A virtual travel guide for all your trips.<br /><span>Meticulously curated by the city locals</span></p>
+            {/* <button href='#start'>Explore a city</button> */}
+          </div>
+
         </div>
 
           <div className="hero2">

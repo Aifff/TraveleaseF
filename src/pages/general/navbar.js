@@ -45,17 +45,31 @@ const Navbar = ({isAuth, setIsAuth, setIsInChat, setSelectedCity, selectedCity})
     <div className="subNav">
 
 
-      <nav className="  navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg">
 
-        <div className="col-xl-2"><h2 className="logo"><a href="/">T</a></h2></div>
+        <div className="col-xl-1 col-3"><h2 className="logo"><a href="/">T</a></h2></div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent" >
+        {/* <button class="HamburgerClose" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> */}
+          {/* <span class="navbar-toggler-icon"></span> */}
           
-          <ul className="navbar-nav mr-auto ml-auto">
+          <label for="check" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <input type="checkbox" id="check"/> 
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+        {/* </button> */}
+
+        
+
+
+
+
+
+        <div className="col-xl-auto collapse navbar-collapse" id="navbarSupportedContent" >
+          
+          <ul className="navbar-nav">
             <li className="nav-item active">
               <Link to="/" className="nav-link">Home</Link>
             </li>
@@ -91,37 +105,38 @@ const Navbar = ({isAuth, setIsAuth, setIsInChat, setSelectedCity, selectedCity})
           </ul>
 
           <div className="navButtons col-xl-2 col">
-          <Tooltip label='Create a card' >
-            {/* <Button className="plusButton" onClick={onOpen}> */}
-              <BookPlus className="plusButton" onClick={isAuth? onOpen: () => window.alert('Please login to add')} />
-            {/* </Button> */}
-          </Tooltip>
-          <Modal isOpen={isOpen} onClose={onClose}  isCentered>
-            <ModalOverlay />
-            <ModalContent>
-              <ModalCloseButton />
 
-              <CreateCard onClose={onClose} user={user}/>
+            <Tooltip label='Create a card' >
+              {/* <Button className="plusButton" onClick={onOpen}> */}
+                <BookPlus className="plusButton" onClick={isAuth? onOpen: () => window.alert('Please login to add')} />
+              {/* </Button> */}
+            </Tooltip>
+            <Modal isOpen={isOpen} onClose={onClose}  isCentered>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalCloseButton />
 
-            </ModalContent>
-          </Modal>
-          
-          <Tooltip label='Select your city'>
-            <Select placeholder="City" value={selectedCity} onChange={handleChange}>
-              <option value="Hyderabad">Hyderabad</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Banglore">Banglore</option>
-              <option value="New york">New York</option>
-              <option value="Chicago">Chicago</option>
-              <option value="Chennai">Chennai</option>
-              <option value="Denmark">Denmark</option>
-              <option value="Seoul">Seoul</option>
-            </Select>
-          </Tooltip>
+                <CreateCard onClose={onClose} user={user}/>
 
-          <button>
-            <Login isAuth={isAuth} setIsAuth={setIsAuth} setIsInChat={setIsInChat} setUser={setUser}/>
-          </button>
+              </ModalContent>
+            </Modal>
+            
+            <Tooltip label='Select your city'>
+              <Select placeholder="City" value={selectedCity} onChange={handleChange}>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Banglore">Banglore</option>
+                <option value="New york">New York</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Seoul">Seoul</option>
+              </Select>
+            </Tooltip>
+
+            <button>
+              <Login isAuth={isAuth} setIsAuth={setIsAuth} setIsInChat={setIsInChat} setUser={setUser}/>
+            </button>
 
           </div>
           
@@ -131,7 +146,7 @@ const Navbar = ({isAuth, setIsAuth, setIsInChat, setSelectedCity, selectedCity})
 
       </nav>
 
-      <h1 className="navbarHeader col-8" >Travelease</h1>
+      {/* <h1 className="navbarHeader col-8" >Travelease</h1> */}
 
 
     </div>

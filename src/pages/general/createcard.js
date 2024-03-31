@@ -66,7 +66,7 @@ const CreateCard = ({ onClose, user }) => {
         // alert('An error happened. Please Check console'); //for admin-testing
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error.response);
-        window.alert('Card couldnt be created. Contact admin. Creation failed succesfully.')
+        window.alert('Contact adminas card creation failed succesfully.')
       });
 
     onClose();

@@ -13,6 +13,8 @@ import { Select, Tooltip } from "@chakra-ui/react";
 import Notification from "./pages/errors/notification";
 
 import Navbar from "./pages/general/navbar";
+import Footer from "./pages/general/footer";
+
 import Home from "./pages/general/home";
 import City from "./pages/general/city";
 import Chat from "./pages/general/chat";
@@ -72,8 +74,7 @@ function App() {
         </Tooltip>
       </div>
 
-      <div className="blank">
-      </div>
+      <div className="blank"></div>
 
       {/* <Select placeholder="Select option" value={selectedCity} onChange={handleChange}>
         <option value="Hyderabad">Hyderabad</option>
@@ -138,6 +139,9 @@ function App() {
         />
       </Routes>
       {/* </Router> */}
+      
+      <Footer />
+
     </div>
   );
 }

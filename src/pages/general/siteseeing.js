@@ -31,19 +31,34 @@ const Siteseeing = ({selectedCity}) => {
   console.log(book)
 
   return (
-    <div className='p-4 m-4'>
-      <h2>Wonders of {selectedCity}</h2>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <div className='cards' >
-          {book.map((item) => (
-                <SingleCard 
-                City={item.City} Type={item.Type} Name={item.Name} Locatioon={item.Locatioon} Speciality={item.Speciality} Details={item.Details} Picture={item.Picture} Rlink={item.Rlink}
-                />
-            ))}
-        </div>
-      )}
+    <div className='p-4 m-4' style={{minHeight:"70vh"}}> 
+    {selectedCity? 
+      ( <>
+          <h2>Wonders of {selectedCity}</h2>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <>
+            { book.length < 0 ? 
+              (
+                <div className='cards'>
+                  {book.map((item) => (
+                        <SingleCard 
+                        City={item.City} Type={item.Type} Name={item.Name} Locatioon={item.Locatioon} Speciality={item.Speciality} Details={item.Details} Picture={item.Picture} Rlink={item.Rlink}
+                        />
+                    ))}
+                </div>
+              )
+              :
+              (<h3>No siteseeing places available in {selectedCity} currently.</h3>)
+            }
+            </>
+          )}
+        </>
+      )
+      :
+      (<h3>Please select a city to check out its interesting and beautiful monuments.</h3>)
+    }
     </div>
   )
 }
