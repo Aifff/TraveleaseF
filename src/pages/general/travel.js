@@ -39,7 +39,7 @@ const Travel = ({selectedCity}) => {
             <Spinner />
           ) : (
             <>
-            { book.length < 0 ? 
+            { book.length > 0 ? 
               (
                 <div className='cards'>
                   {book.map((item) => (
