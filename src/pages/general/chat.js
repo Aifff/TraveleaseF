@@ -105,6 +105,7 @@ const Chat = ({selectedCity, preFilledMessage}) => {
           /> */}
 
           <textarea
+            autofocus
             value={newMessage}
             onChange={(event) => setNewMessage(event.target.value)}
             className="new-message-input"
