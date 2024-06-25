@@ -2,38 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 //styling
-import { Button } from '@chakra-ui/react'
+import {Button} from '@chakra-ui/react'
 import './singlecard.css'
 
-const SingleCard = ({ City, Type, Name, Speciality, Locatioon, Details, Picture, Rlink }) => {
+const SingleCard = ({ City, Type, Name, Speciality, Locatioon, Details, Picture, Rlink}) => {
 
   const [preFilledMessage, setPreFilledMessage] = useState("");
   const navigate = useNavigate();
 
-  // variable declaraion for image in cards:
-  const [imageSrc, setImageSrc] = useState("");
-
-  // function for image fetching from MongoDB:
-  // useEffect(() => {
-  //   const fetchImage = async () => {
-  //     try {
-  //       const response = await axios.get(`http://localhost:5000/image/${Picture}`, { responseType: 'blob' });
-  //       const imageUrl = URL.createObjectURL(response.data);
-  //       setImageSrc(imageUrl);
-  //     } catch (error) {
-  //       console.error("Error fetching the image:", error);
-  //     }
-  //   };
-
-  //   fetchImage();
-  // }, [Picture]);
-
-
-
-  // for custom Message. Sets variable for specific Card, which gets accessed from chat page:
   const handleSendToChat = (Name, Location) => {
+
     console.log(Name, Location)
-    setPreFilledMessage(`Hey guys, i need some suggestions on ${Name}, ${Location}, how good is it?`);
+
+    setPreFilledMessage(`Hey guys, need some suggestions on ${Name}, ${Location}, how good is it?`);
   };
 
   useEffect(() => {
@@ -54,52 +35,42 @@ const SingleCard = ({ City, Type, Name, Speciality, Locatioon, Details, Picture,
   return (
     <>
       {/* <div className ="cards"> */}
-      <li>
-        <div className="card">
-
-          {/* <img
-            src="https://i.imgur.com/oYiTqum.jpg"
-            className="card__image1"
-            alt="background-image"
-          /> */}
-          <img
-            src={Picture || "https://i.imgur.com/oYiTqum.jpg"}
-            className="card__image"
-            alt="background"
-          />
-
-
-
-          <div className="card__overlay">
-            <div className="card__header">
-              <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                <path />
-              </svg>
-              {/* <img
+        <li>
+          <div className="card">
+            <img
+              src="https://i.imgur.com/oYiTqum.jpg"
+              className ="card__image"
+              alt="background-image"
+            />
+            <div className="card__overlay">
+              <div className ="card__header">
+                <svg className ="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                {/* <img
                   className ="card__thumb"
                   src="https://i.imgur.com/7D7I6dI.png"
                   alt="profile image or logo"
                 /> */}
-              <div className="card__header-text">
-                <h3 className="card__title">{Name}</h3>
-                <span className="card__status">Speciality:{Speciality}</span>
+                <div className ="card__header-text">
+                  <h3 className ="card__title">{Name}</h3>
+                  <span className ="card__status">Speciality:{Speciality}</span>
+                </div>
               </div>
+              <p className ="card__description">
+                {Details}
+              </p>
+
+
+              <div className="cardButtons">
+                <button className="btn btn-primary" onClick={() => handleSendToChat(Name, Locatioon)}>Ask a local</button>
+
+                <button className="btn btn-primary" onClick={() => window.location.href = Rlink}>Know more</button>
+              </div>
+              
             </div>
-            <p className="card__description">
-              {Details}
-            </p>
-
-
-            <div className="cardButtons">
-              <button className="btn btn-primary" onClick={() => handleSendToChat(Name, Locatioon)}>Ask a local</button>
-
-              <button className="btn btn-primary" onClick={() => window.location.href = Rlink}>Know more</button>
-            </div>
-
           </div>
-
-        </div>
-      </li>
+        </li>
       {/* </div> */}
     </>
   );
