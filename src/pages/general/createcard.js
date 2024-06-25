@@ -30,7 +30,8 @@ const CreateCard = ({ onClose, user }) => {
   const [Speciality, setSpeciality] = useState('');
   const [Locatioon, setLocatioon] = useState('');
   const [Details, setDetails] = useState('');
-  const [Picture, setPicture] = useState('');
+  // const [Picture, setPicture] = useState('');
+  const [Picture, setPicture] = useState(null);
   const [Rlink, setRlink] = useState('');
 
   
@@ -38,14 +39,26 @@ const CreateCard = ({ onClose, user }) => {
 
   const [loading, setLoading] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
+
+  // handling storing of image:
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setPicture(file);
+  };
   
+
+
+
+
+
+
+  // for storing data by posting to DB through addNewCard API handling
   const handleSaveBook = () => {
 
 
     const data = { City, Type, Name, Speciality, Locatioon, Details, Picture, Rlink, user };
 
     console.log(user)
-    
     console.log(data)
 
     setLoading(true);
@@ -155,6 +168,20 @@ const CreateCard = ({ onClose, user }) => {
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
+
+        {/* for images input: */}
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Upload Picture</label>
+          <input
+            type='file'
+            onChange={handleFileChange}
+            className='border-2 border-gray-500 px-4 py-2 w-full'
+          />
+        </div>
+
+
+
+
 
         {/* <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Picture:</label>
