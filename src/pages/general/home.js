@@ -48,13 +48,14 @@ const Home = ({City, setSelectedCity, selectedCity}) => {
   };
 
   const API_URL = process.env.REACT_APP_API_URL;
-
-
-
-
+  
+  
+  
+  
   useEffect(() => {
     setLoading(true);
-
+    
+    console.log(process.env.API_URL)
     console.log(API_URL)
     
     axios
