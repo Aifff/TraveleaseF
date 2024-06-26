@@ -75,7 +75,7 @@ const CreateCard = ({ onClose, user }) => {
 
       onClose();
       // }, [API_URL]
-      
+
     // );
   }
 
@@ -88,18 +88,18 @@ const CreateCard = ({ onClose, user }) => {
 
 
         <div>
-          <p className='text-xl mr-4 text-gray-500'>Select city</p>
+          <p className='text-xl mr-4 text-gray-500'>Select city*</p>
           <FormInputs suggestions={suggestionsCity} setCity={setCity} />
         </div>
 
         <div className='my-4'>
-          <p className='text-xl mr-4 text-gray-500'>Type of establishment</p>
+          <p className='text-xl mr-4 text-gray-500'>Type of establishment*</p>
           <select
             value={Type}
             onChange={(e) => setType(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2 w-full'
           >
-            <option value="">Select Type</option>
+            <option value="">Select Type*</option>
             <option value="Food">Food</option>
             <option value="Hotel">Hotel</option>
             <option value="Travel">Travel</option>
@@ -109,7 +109,7 @@ const CreateCard = ({ onClose, user }) => {
 
 
         <div className='my-4'>    
-          <p className='text-xl mr-4 text-gray-500'>Name</p>
+          <p className='text-xl mr-4 text-gray-500'>Name*</p>
           <input
             type='text'
             value={Name}
@@ -142,7 +142,7 @@ const CreateCard = ({ onClose, user }) => {
         </div>
 
         <div className='my-4'>
-          <p className='text-xl mr-4 text-gray-500'>Location</p>
+          <p className='text-xl mr-4 text-gray-500'>Location*</p>
           <input
             type='text'
             value={Locatioon}
