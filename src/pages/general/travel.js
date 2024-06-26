@@ -11,10 +11,13 @@ const Travel = ({selectedCity}) => {
 
   console.log(selectedCity)
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://travelease-b.vercel.app/${selectedCity}/travel`)
+      .get(`${API_URL}/${selectedCity}/travel`)
+      // .get(`https://travelease-b.vercel.app/${selectedCity}/travel`)
       // .get(`http://localhost:4000/${selectedCity}/travel`)
       .then((response) => {
         setBook(response.data.data);        //data is received and stored in 'book' state variable
@@ -24,7 +27,7 @@ const Travel = ({selectedCity}) => {
         console.log(error);
         setLoading(false);
       });
-    }, [selectedCity]
+    }, [selectedCity, API_URL]
   );
     
     

@@ -47,13 +47,19 @@ const Home = ({City, setSelectedCity, selectedCity}) => {
     // history.push(`/${event.target.value}`); // to be used when redirecting to individual page for each city
   };
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
 
 
 
   useEffect(() => {
     setLoading(true);
+
+    console.log(API_URL)
+    
     axios
-      .get(`https://travelease-b.vercel.app/${City}`)
+      .get(`${API_URL}/${City}`)
+      // .get(`https://travelease-b.vercel.app/${City}`)
       // .get(`http://localhost:4000/${City}`)
       .then((response) => {
         setBooks(response.data.data);
@@ -63,7 +69,7 @@ const Home = ({City, setSelectedCity, selectedCity}) => {
         console.log(error);
         setLoading(false);
       });
-  }, [City]);
+  }, [City, API_URL]);
 
 
   // background

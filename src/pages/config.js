@@ -6,4 +6,4 @@
 //     export const db = mongoose.connection.db;
 
 
-//not used 
+//not used as this is only for server(express)

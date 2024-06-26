@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Spinner } from '@chakra-ui/react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -48,29 +48,36 @@ const CreateCard = ({ onClose, user }) => {
     
     console.log(data)
 
-    setLoading(true);
+    const API_URL = process.env.REACT_APP_API_URL;
 
-    axios
-      .post(`https://travelease-b.vercel.app/addNewCard`, data)
-      // .post(`http://localhost:4000/addNewCard`, data)
-      .then(() => {
-        setLoading(false);
-        enqueueSnackbar('Book Created successfully', { variant: 'success' });
-        console.log('Book created succesfully')
-        navigate('/');
-        // onclose();
-        window.alert('Card created succesfully')
-      })
-      .catch((error) => {
-        setLoading(false);
-        // alert('An error happened. Please Check console'); //for admin-testing
-        enqueueSnackbar('Error', { variant: 'error' });
-        console.log(error.response);
-        window.alert('Contact adminas card creation failed succesfully.')
-      });
+    // useEffect(() => {
+      setLoading(true);
 
-    onClose();
-  };
+      axios
+        .post(`${API_URL}/addNewCard`, data)
+        // .post(`https://travelease-b.vercel.app/addNewCard`, data)
+        // .post(`http://localhost:4000/addNewCard`, data)
+        .then(() => {
+          setLoading(false);
+          enqueueSnackbar('Book Created successfully', { variant: 'success' });
+          console.log('Book created succesfully')
+          navigate('/');
+          // onclose();
+          window.alert('Card created succesfully')
+        })
+        .catch((error) => {
+          setLoading(false);
+          // alert('An error happened. Please Check console'); //for admin-testing
+          enqueueSnackbar('Error', { variant: 'error' });
+          console.log(error.response);
+          window.alert('Card creation failed succesfully.')
+        });
+
+      onClose();
+      // }, [API_URL]
+      
+    // );
+  }
 
   return (
     <div className='p-4'>
@@ -81,12 +88,12 @@ const CreateCard = ({ onClose, user }) => {
 
 
         <div>
-          <label className='text-xl mr-4 text-gray-500'>City</label>
+          <p className='text-xl mr-4 text-gray-500'>Select city</p>
           <FormInputs suggestions={suggestionsCity} setCity={setCity} />
         </div>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Type</label>
+          <p className='text-xl mr-4 text-gray-500'>Type of establishment</p>
           <select
             value={Type}
             onChange={(e) => setType(e.target.value)}
@@ -101,8 +108,8 @@ const CreateCard = ({ onClose, user }) => {
         </div>
 
 
-        <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Name</label>
+        <div className='my-4'>    
+          <p className='text-xl mr-4 text-gray-500'>Name</p>
           <input
             type='text'
             value={Name}
@@ -113,7 +120,7 @@ const CreateCard = ({ onClose, user }) => {
         </div>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Whats is it known for?</label>
+          <p className='text-xl mr-4 text-gray-500'>Whats is it known for?</p>
           <input
             type='text'
             value={Speciality}
@@ -124,7 +131,7 @@ const CreateCard = ({ onClose, user }) => {
         </div>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Details</label>
+          <p className='text-xl mr-4 text-gray-500'>Details</p>
           <input
             type='text'
             value={Details}
@@ -135,29 +142,29 @@ const CreateCard = ({ onClose, user }) => {
         </div>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Location</label>
+          <p className='text-xl mr-4 text-gray-500'>Location</p>
           <input
             type='text'
             value={Locatioon}
             onChange={(e) => setLocatioon(e.target.value)}
-            placeholder='Enter name of establishment'
+            placeholder='Enter locality of the establishment'
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Link to redirect to the place:</label>
+          <p className='text-xl mr-4 text-gray-500'>Link to redirect to the place:</p>
           <input
             type='text'
             value={Rlink}
             onChange={(e) => setRlink(e.target.value)}
-            placeholder='Enter name of establishment'
+            placeholder='Copy paste a website/reference link of the establishment'
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
 
         {/* <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Picture:</label>
+          <p className='text-xl mr-4 text-gray-500'>Picture:</p>
           <input
             type='text'
             value={Name}

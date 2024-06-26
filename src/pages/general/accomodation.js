@@ -11,11 +11,16 @@ const Accomodation = ({selectedCity}) => {
 
   console.log(selectedCity)
 
+
+  // for API request, first half
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://travelease-b.vercel.app/${selectedCity}/hotel`)
       // .get(`http://localhost:4000/${selectedCity}/hotel`)
+      // .get(`https://travelease-b.vercel.app/${selectedCity}/hotel`)
+      .get(`${API_URL}/${selectedCity}/hotel`)
       .then((response) => {
         setBook(response.data.data);        //data is received and stored in 'book' state variable
         setLoading(false);
@@ -24,7 +29,7 @@ const Accomodation = ({selectedCity}) => {
         console.log(error);
         setLoading(false);
       });
-    }, [selectedCity]
+    }, [selectedCity, API_URL]
   );
     
     

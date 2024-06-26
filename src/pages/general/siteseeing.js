@@ -11,10 +11,13 @@ const Siteseeing = ({selectedCity}) => {
 
   console.log(selectedCity)
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://travelease-b.vercel.app/${selectedCity}/siteseeing`)
+      .get(`${API_URL}/${selectedCity}/siteseeing`)
+      // .get(`https://travelease-b.vercel.app/${selectedCity}/siteseeing`)
       // .get(`http://localhost:4000/${selectedCity}/siteseeing`)
       .then((response) => {
         setBook(response.data.data);        //data is received and stored in 'book' state variable
@@ -24,7 +27,7 @@ const Siteseeing = ({selectedCity}) => {
         console.log(error);
         setLoading(false);
       });
-    }, [selectedCity]
+    }, [selectedCity, API_URL]
   );
     
     
