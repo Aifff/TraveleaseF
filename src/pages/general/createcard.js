@@ -80,88 +80,95 @@ const CreateCard = ({ onClose, user }) => {
   }
 
   return (
-    <div className='p-4'>
+    <div className='modal-form flex'>
       {/* <BackButton /> */}
-      <h1 className='text-3xl my-4'>Create Book</h1>
+      <h1 className='form-heading'>Create Card</h1>
       {loading ? <Spinner /> : ''}
-      <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
+      <div className="form">
 
+        <div className='form1'>
+          <div className='my-4'>
+            <p className='text-xl mr-4 text-gray-500'>Select city*</p>
+            <FormInputs suggestions={suggestionsCity} setCity={setCity} />
+          </div>
 
-        <div>
-          <p className='text-xl mr-4 text-gray-500'>Select city*</p>
-          <FormInputs suggestions={suggestionsCity} setCity={setCity} />
+          <div className='my-4'>
+            <p className='text-xl mr-4 text-gray-500'>Type of establishment*</p>
+            <select
+              value={Type}
+              onChange={(e) => setType(e.target.value)}
+              className='border-2 border-gray-500 px-4 py-2 w-full'
+            >
+              <option value="">Select Type*</option>
+              <option value="Food">Food</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Travel">Travel</option>
+              <option value="Siteseeing">Siteseeing</option>
+            </select>
+          </div>
+
+          <div className='my-4'>    
+            <p className='text-xl mr-4 text-gray-500'>Name*</p>
+            <input
+              type='text'
+              value={Name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder='Enter name of establishment'
+              className='border-2 border-gray-500 px-4 py-2  w-full '
+            />
+          </div>
+
+          <div className='my-4'>
+            <p className='text-xl mr-4 text-gray-500'>Location*</p>
+            <input
+              type='text'
+              value={Locatioon}
+              onChange={(e) => setLocatioon(e.target.value)}
+              placeholder='Enter locality of the establishment'
+              className='border-2 border-gray-500 px-4 py-2  w-full '
+            />
+          </div>
         </div>
 
-        <div className='my-4'>
-          <p className='text-xl mr-4 text-gray-500'>Type of establishment*</p>
-          <select
-            value={Type}
-            onChange={(e) => setType(e.target.value)}
-            className='border-2 border-gray-500 px-4 py-2 w-full'
-          >
-            <option value="">Select Type*</option>
-            <option value="Food">Food</option>
-            <option value="Hotel">Hotel</option>
-            <option value="Travel">Travel</option>
-            <option value="Siteseeing">Siteseeing</option>
-          </select>
+        <div className='form2'>
+          <div className='my-4'>
+            <p className='text-xl mr-4 text-gray-500'>Whats is it known for?</p>
+            <input
+              type='text'
+              value={Speciality}
+              onChange={(e) => setSpeciality(e.target.value)}
+              placeholder='Enter the speciality'
+              className='border-2 border-gray-500 px-4 py-2  w-full '
+            />
+          </div>
+
+          <div className='my-4'>
+            <p className='text-xl mr-4 text-gray-500'>Details</p>
+            <input
+              type='text'
+              value={Details}
+              onChange={(e) => setDetails(e.target.value)}
+              placeholder='Enter any other details necessary'
+              className='border-2 border-gray-500 px-4 py-2  w-full '
+            />
+          </div>
+
+          <div className='my-4'>
+            <p className='text-xl mr-4 text-gray-500'>Link to redirect to the place:</p>
+            <input
+              type='text'
+              value={Rlink}
+              onChange={(e) => setRlink(e.target.value)}
+              placeholder='Copy paste a website/reference link'
+              className='border-2 border-gray-500 px-4 py-2  w-full '
+            />
+          </div>
+
+          <button className='p-2 bg-sky-300 m-8 save-button' onClick={handleSaveBook}>
+            Save
+          </button>
         </div>
 
-
-        <div className='my-4'>    
-          <p className='text-xl mr-4 text-gray-500'>Name*</p>
-          <input
-            type='text'
-            value={Name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder='Enter name of establishment'
-            className='border-2 border-gray-500 px-4 py-2  w-full '
-          />
-        </div>
-
-        <div className='my-4'>
-          <p className='text-xl mr-4 text-gray-500'>Whats is it known for?</p>
-          <input
-            type='text'
-            value={Speciality}
-            onChange={(e) => setSpeciality(e.target.value)}
-            placeholder='Enter the speciality'
-            className='border-2 border-gray-500 px-4 py-2  w-full '
-          />
-        </div>
-
-        <div className='my-4'>
-          <p className='text-xl mr-4 text-gray-500'>Details</p>
-          <input
-            type='text'
-            value={Details}
-            onChange={(e) => setDetails(e.target.value)}
-            placeholder='Enter any other details necessary'
-            className='border-2 border-gray-500 px-4 py-2  w-full '
-          />
-        </div>
-
-        <div className='my-4'>
-          <p className='text-xl mr-4 text-gray-500'>Location*</p>
-          <input
-            type='text'
-            value={Locatioon}
-            onChange={(e) => setLocatioon(e.target.value)}
-            placeholder='Enter locality of the establishment'
-            className='border-2 border-gray-500 px-4 py-2  w-full '
-          />
-        </div>
-
-        <div className='my-4'>
-          <p className='text-xl mr-4 text-gray-500'>Link to redirect to the place:</p>
-          <input
-            type='text'
-            value={Rlink}
-            onChange={(e) => setRlink(e.target.value)}
-            placeholder='Copy paste a website/reference link of the establishment'
-            className='border-2 border-gray-500 px-4 py-2  w-full '
-          />
-        </div>
 
         {/* <div className='my-4'>
           <p className='text-xl mr-4 text-gray-500'>Picture:</p>
@@ -174,9 +181,6 @@ const CreateCard = ({ onClose, user }) => {
           />
         </div> */}
 
-        <button className='p-2 bg-sky-300 m-8' onClick={handleSaveBook}>
-          Save
-        </button>
       </div>
     </div>
   );

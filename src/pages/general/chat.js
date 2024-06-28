@@ -89,7 +89,10 @@ const Chat = ({selectedCity, preFilledMessage}) => {
       <div className="messageBox">
         <div className="messages">
           { messages.map((message) => (
-            <div key={message.id} className="message">
+            <div key={message.id} className={`message 
+              ${message.user === auth.currentUser.displayName ? 'right' : 'left'
+              }`}
+            >
               <span className="user">{message.user}:</span> {message.text}
             </div>
           ))}

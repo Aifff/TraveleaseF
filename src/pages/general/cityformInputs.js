@@ -46,6 +46,7 @@ function FormInputs({suggestions, setCity}) {
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Type something..."
+          className="border-2 border-gray-500 px-4 py-2  w-full"
         />
         {suggestedValue && (
           <div>

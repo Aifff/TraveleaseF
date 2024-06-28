@@ -310,8 +310,6 @@ h1{
   height: calc(100% - 58px);
   max-height: auto;
 
-  color: #fff;
-
   border-radius: 40px 0px 40px 0px;
   border: 2px var(--secondary-color) solid;
 }
@@ -324,19 +322,43 @@ h1{
   overflow: auto;
   /* height: calc(100% - 55px) ; */
   /* max-height:90%; */
-  height: calc(100% - 48px)
+  height: calc(100% - 48px);
   /* height: 360px; */
   /* height: fit-content; */
   /* min-height: 50vh; */
+
+  
+  display: flex;
+  flex-direction: column;
 }
 
-.user{
+/* for messages of user */
+.message {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  max-width: 60%;
+}
+
+.message.left {
+  background-color: #c7c6c6;
+  align-self: flex-start;
+}
+
+.message.right {
+  background-color: #c5d8cf;
+  align-self: flex-end;
+}
+
+/* ------------------- */
+
+#text{
   color:#000;
 }
 
-.message span{
-  /* for messge from users */
-
+.user{
+  font-weight: bold;
+  color:#000;
 }
 
 /* scrollbar */
@@ -430,6 +452,208 @@ h1{
   font-weight: 550;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal add-on styling */
+.css-1filp18{
+  border-radius:35px !important;
+}
+
+.modal-form{
+  /* padding:0px 2px 0px 2px; */
+  
+}
+
+.form-heading{
+  border-radius: 35px 35px 0px 0px;
+  height: 80px;
+}
+
+.city-input{
+  border: 1px solid grey;
+}
+
+.form{
+  display:flex;
+  justify-content: space-around;
+  flex: 1 1 auto; /* equivalent to flex-auto */
+  display: flex; /* to apply flexbox */
+  flex-direction: row; /* equivalent to flex-row */
+  border-width: 2px; /* equivalent to border-2 */
+  border-color: var(--third-color); /* equivalent to border-sky-400 (color may vary slightly depending on Tailwind version) */
+  border-style: solid; /* ensure the border style is solid */
+  border-radius: 35px; /* equivalent to rounded-xl */
+  width: 100%; /* equivalent to w-100 (note: in Tailwind w-100 does not exist, but assuming it to mean 100%) */
+  padding: 1rem; /* equivalent to p-4 */
+  margin-left: auto; /* equivalent to mx-auto */
+  margin-right: auto;
+}
+
+
+.form1, .form2{
+  width: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stylings for form: */
+
+
+input,
+textarea,
+.save-button {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.2px;
+  font-size: 16px;
+  /* align-self: center; */
+}
+
+.modal-form{
+  color: #000;
+}
+
+form {
+  padding: 16px;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.segment {
+  padding: 32px 0;
+  text-align: center;
+}
+
+.save-button,
+input {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+label {
+  display: block;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+input {
+  margin-right: 8px;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+
+.save-button {
+  color: var(--secondary-color);
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+
+  border-radius: 25px;
+  width: 100%;
+}
+.save-button:hover {
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px var(--secondary-color);
+}
+.save-button:active {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+.save-button .icon {
+  margin-right: 8px;
+}
+.save-button.unit {
+  border-radius: 8px;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+  font-size: 19.2px;
+}
+.save-button.unit .icon {
+  margin-right: 0;
+}
+.save-button.red {
+  display: block;
+  width: 100%;
+  color: #ae1100;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.input-group label {
+  margin: 0;
+  flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* cards on home page */
 .main{
   padding: 30px;
@@ -487,7 +711,7 @@ h2{
 
   position: relative;
   width: 100%;
-  background: #3586ff;
+  background: #95246d;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -540,7 +764,7 @@ h2{
 }
 
 .menu li a span{
-  color: #9c5885;
+  /* color:#fff; */
 }
 
 
