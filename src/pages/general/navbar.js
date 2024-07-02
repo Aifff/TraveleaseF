@@ -113,7 +113,7 @@ const Navbar = ({isAuth, setIsAuth, setIsInChat, setSelectedCity, selectedCity})
             </Tooltip>
             <Modal isOpen={isOpen} onClose={onClose}  isCentered>
               <ModalOverlay />
-              <ModalContent maxH="100%" maxW="60%">
+              <ModalContent /* maxH="100%" */ maxW="80%">
                 
                 <ModalCloseButton />
                 <CreateCard onClose={onClose} user={user}/>

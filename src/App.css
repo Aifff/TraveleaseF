@@ -525,6 +525,14 @@ h1{
 
 /* Stylings for form: */
 
+/* 
+.css-1wh14rv{
+  border-radius:35px !important;
+} */
+
+.css-1htutmd{
+  border-radius:35px !important;
+}
 
 input,
 textarea,
@@ -537,6 +545,7 @@ textarea,
 
 .modal-form{
   color: #000;
+  border-radius:35px;
 }
 
 form {
@@ -1037,4 +1046,15 @@ h2{
     height: fit-content;
   }
   
+  .form{
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .form1, .form2{
+    width: 100%;
+  }
+  .form-heading{
+    padding-top:20px
+  }
 }
